@@ -1,0 +1,22 @@
+-- criando uma view 
+-- listas isbn, titulo, editora
+-- join
+use db_livro
+
+select L.isbn, L.titulo, E.editora from
+tb_livro L inner join tb_editora E
+on L.cd_editora = E.cd_editora;
+
+-- produto cartesiano - algebra relacional
+select L.isbn, L.titulo, E.editora from
+tb_livro L inner join tb_editora E;
+
+-- join isbn, titulo, editora e genero
+
+select L.isbn , L.titulo, E.editora, G.genero
+from tb_livro L inner join tb_editora E
+on L.cd_editora = E.cd_editora 
+inner join tb_genero G
+on L.cd_genero = G.cd_genero
+
+
